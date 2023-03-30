@@ -27,4 +27,3 @@ void print_number(int n)
 	_putchar((unsigned int) n % 10 + '0');
 
 }
-
