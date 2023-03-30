@@ -1,38 +1,48 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
- * print_triangle - prints a triangle
+ * main - entry point
  *
- * Description: A function that prints a triangle, followed by a new line
- *
- * @size: size of the triangle
+ * Description: prints numbers 1 to 100,
+ * For multiples of three, print Fizz instead of the number
+ * For the multiples of five print Buzz
+ * For numbers which are multiples of both three and five print FizzBuzz.
  *
  * Return: always returns 0
  *
  */
 
-void print_triangle(int size)
+int main(void)
 {
-	int i, j, k;
+	int i;
 
-	if (size <= 0)
+	for (i = 1; i <= 100; i++)
 	{
-		_putchar('\n');
-	}
 
-	else
-	{
-		for (i = 0; i < size; i++)
+		if ((i % 3 == 0) && (i % 5 == 0))
 		{
-			for (j = size - i; j > 1; j--)
-			{
-				_putchar(32);
-			}
-			for (k = 0; k <= i; k++)
-			{
-				_putchar(35);
-			}
-			_putchar('\n');
+			printf("FizzBuzz");
+		}
+		else if (i % 3 == 0)
+		{
+			printf("Fizz");
+		}
+		else if (i % 5 == 0)
+		{
+			printf("Buzz");
+		}
+		else
+		{
+			printf("%d", i);
+		}
+
+		if (i != 100)
+		{
+			printf(" ");
 		}
 	}
+	printf("\n");
+
+	return (0);
 }
